@@ -193,7 +193,7 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
+    mini_portile2 (2.8.9)
     minitest (5.25.5)
     monetize (1.13.0)
       money (~> 6.12)
@@ -221,10 +221,10 @@ GEM
     net-ssh (7.3.0)
     nio4r (2.7.4)
     nkf (0.2.0)
-    nokogiri (1.18.7)
+    nokogiri (1.18.9)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.18.7-x86_64-linux-gnu)
+    nokogiri (1.18.9-x86_64-linux-gnu)
       racc (~> 1.4)
     ostruct (0.6.1)
     pdf-core (0.10.0)
@@ -414,7 +414,7 @@ CHECKSUMS
   marcel (1.0.4) sha256=0d5649feb64b8f19f3d3468b96c680bae9746335d02194270287868a661516a4
   matrix (0.4.2) sha256=71083ccbd67a14a43bfa78d3e4dc0f4b503b9cc18e5b4b1d686dc0f9ef7c4cc0
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
-  mini_portile2 (2.8.8) sha256=8e47136cdac04ce81750bb6c09733b37895bf06962554e4b4056d78168d70a75
+  mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
   minitest (5.25.5) sha256=391b6c6cb43a4802bfb7c93af1ebe2ac66a210293f4a3fb7db36f2fc7dc2c756
   monetize (1.13.0) sha256=0c1f8ae28aa21bbf1a6d014138d9bb0a5ce756c1a99b8b7f7d409c258b01d3b3
   money (6.19.0) sha256=ec936fa1e42f2783719241ed9fd52725d0efa628f928feea1eb5c37d5de7daf3
@@ -429,8 +429,8 @@ CHECKSUMS
   net-ssh (7.3.0) sha256=172076c4b30ce56fb25a03961b0c4da14e1246426401b0f89cba1a3b54bf3ef0
   nio4r (2.7.4) sha256=d95dee68e0bb251b8ff90ac3423a511e3b784124e5db7ff5f4813a220ae73ca9
   nkf (0.2.0) sha256=fbc151bda025451f627fafdfcb3f4f13d0b22ae11f58c6d3a2939c76c5f5f126
-  nokogiri (1.18.7) sha256=6b63ff5defe48f30d1d3b3122f65255ca91df2caf5378c6e0482ce73ff46fb31
-  nokogiri (1.18.7-x86_64-linux-gnu) sha256=3a0bf946eb2defde13d760f869b61bc8b0c18875afdd3cffa96543cfa3a18005
+  nokogiri (1.18.9) sha256=ac5a7d93fd0e3cef388800b037407890882413feccca79eb0272a2715a82fa33
+  nokogiri (1.18.9-x86_64-linux-gnu) sha256=b52f5defedc53d14f71eeaaf990da66b077e1918a2e13088b6a96d0230f44360
   ostruct (0.6.1) sha256=09a3fb7ecc1fa4039f25418cc05ae9c82bd520472c5c6a6f515f03e4988cb817
   pdf-core (0.10.0) sha256=0a5d101e2063c01e3f941e1ee47cbb97f1adfc1395b58372f4f65f1300f3ce91
   pg (1.5.9) sha256=761efbdf73b66516f0c26fcbe6515dc7500c3f0aa1a1b853feae245433c64fdc
