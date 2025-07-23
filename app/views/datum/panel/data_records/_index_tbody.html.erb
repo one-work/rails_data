@@ -1,28 +1,24 @@
-<% if rails_role_user.has_role?('datum/panel/data_records', 'read', data_record.id) %>
-<tr>
-  <td><%= data_record.id %></td>
-  <td>
-    <p><%= data_record.title %></p>
-    <p><%= data_record.comment %></p>
-  </td>
-  <td>
-    <p><%= data_record.data_table %></p>
-    <p><%= data_record.export_excel %></p>
-  </td>
-  <td><%= data_record.export_pdf %></td>
-  <td><%= simple_format_hash(data_record.parameters) %></td>
-  <td><%= simple_format_hash(data_record.columns) %></td>
-  <td><%= link_to 'record list', data_record_record_lists_path(data_record) %></td>
-  <td>
-    <%= link_to edit_data_record_path(data_record), aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light' do %>
-      <i class="fa-solid fa-pencil"></i>
-    <% end %>
-    <%= link_to rebuild_data_record_path(data_record), method: :patch, aria: { label: t('.rebuild'), turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-rounded is-light' do %>
-      <i class="fa-regular fa-recycle"></i>
-    <% end %>
-    <%= link_to data_record_path(data_record), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-rounded is-light' do %>
-      <i class="fa-solid fa-trash"></i>
-    <% end %>
-  </td>
-</tr>
-<% end %>
+<td><%= data_record.id %></td>
+<td>
+  <p><%= data_record.title %></p>
+  <p><%= data_record.comment %></p>
+</td>
+<td>
+  <p><%= data_record.data_table %></p>
+  <p><%= data_record.export_excel %></p>
+</td>
+<td><%= data_record.export_pdf %></td>
+<td><%= simple_format_hash(data_record.parameters) %></td>
+<td><%= simple_format_hash(data_record.columns) %></td>
+<td><%= link_to 'record list', data_record_record_lists_path(data_record) %></td>
+<td>
+  <%= link_to edit_data_record_path(data_record), aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light' do %>
+    <i class="fa-solid fa-pencil"></i>
+  <% end %>
+  <%= link_to rebuild_data_record_path(data_record), method: :patch, aria: { label: t('.rebuild'), turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-rounded is-light' do %>
+    <i class="fa-regular fa-recycle"></i>
+  <% end %>
+  <%= link_to data_record_path(data_record), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-rounded is-light' do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
+</td>
