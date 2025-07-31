@@ -82,7 +82,7 @@ module Datum
     end
 
     def run
-      @table_list.run_later(current_authorized_token.identity)
+      @table_list.run_later(Current.session.identity)
     end
 
     private
