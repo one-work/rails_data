@@ -1,0 +1,13 @@
+<div class="fixed-grid has-5-cols">
+  <div class="grid">
+    <%= link_to({ controller: 'datum/panel/data_exports' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('datum.panel.data_exports.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'datum/panel/data_imports' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'data_imports', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+      <span><%= t('datum.panel.data_imports.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'datum/panel/data_records' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'data_records', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+      <span><%= t('datum.panel.data_records.index.title') %></span>
+    <% end %>
+  </div>
+</div>
