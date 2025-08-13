@@ -19,6 +19,6 @@
     <i class="fa-regular fa-recycle"></i>
   <% end %>
   <%= link_to data_record_path(data_record), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless' do %>
-    <%= svg_tag 'trash', class: 'icon' %>
+    <%= svg_tag 'trash' %>
   <% end %>
 </td>
