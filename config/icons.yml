@@ -1,2 +1,4 @@
 regular:
   - chart-bar
+  - check
+  - xmark
