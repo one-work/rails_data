@@ -1,4 +1,5 @@
 regular:
   - chart-bar
   - check
+  - pencil
   - xmark
