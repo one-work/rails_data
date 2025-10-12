@@ -5,11 +5,11 @@ require 'prawn/table'
 class BasePdf < Prawn::Document
   FONT = {
     'Alibaba' => {
-      bold: { file: "#{RailsData::Engine.root}/app/assets/fonts/Alibaba-PuHuiTi-Bold.ttf" },
-      normal: { file: "#{RailsData::Engine.root}/app/assets/fonts/Alibaba-PuHuiTi-Regular.ttf" }
+      bold: { file: "#{RailsData::Engine.root}/vendor/fonts/Alibaba-PuHuiTi-Bold.ttf" },
+      normal: { file: "#{RailsData::Engine.root}/vendor/fonts/Alibaba-PuHuiTi-Regular.ttf" }
     },
     'DingTalk' => {
-      normal: { file: "#{RailsData::Engine.root}/app/assets/fonts/DingTalk-JinBuTi.ttf" }
+      normal: { file: "#{RailsData::Engine.root}/vendor/fonts/DingTalk-JinBuTi.ttf" }
     }
   }
   ALLOW_OPTIONS = [:position, :column_widths, :width, :row_colors, :cell_style]
