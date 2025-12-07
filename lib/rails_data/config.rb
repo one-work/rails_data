@@ -1,14 +1,7 @@
-require 'active_support/configurable'
-
 module RailsData
-  # Config
-  # Configure the standard CSV default options
-  # as well the option to output the header row
-  include ActiveSupport::Configurable
+  mattr_accessor :config, default: ActiveSupport::OrderedOptions.new
 
-  configure do |config|
-    config.inflector = :titleize
-    config.method_name = :report
-  end
+  config.inflector = :titleize
+  config.method_name = :report
 
 end
