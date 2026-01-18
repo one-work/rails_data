@@ -1,0 +1,14 @@
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(controller: 'export_items', export_id: model.id),
+      title: t('.export_items.index.title')
+    },
+    {
+      href: url_for(action: 'show', id: model.id, format: 'xlsx'),
+      icon: 'file-excel',
+      title: t('.show.title')
+    }
+  ) { yield }
+%>

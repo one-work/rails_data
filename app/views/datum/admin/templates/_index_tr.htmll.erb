@@ -1,0 +1,8 @@
+<%=
+  tr_tag(
+    model,
+    { href: url_for(controller: 'template_items', template_id: model.id), title: t('.template_items.index.title') },
+    { href: url_for(controller: 'validations', template_id: model.id), title: t('.validations.index.title') },
+    { href: url_for(controller: 'exports', template_id: model.id), title: t('.exports.index.title') }
+  ) { yield }
+%>
