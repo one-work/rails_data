@@ -4,10 +4,4 @@
 <td class="ui labels">
   <%= link_to 'pdf', data_record_record_list_path(@data_record, record_list, format: 'pdf'), target: '_blank', class: 'ui label' %>
 </td>
-<td class="ui labels">
-  <%= link_to '运行', run_data_record_record_list_path(@data_record, record_list), method: :patch, data: { confirm: 'Are you sure?' }, class: 'ui blue label' %>
-  <%= link_to '预览', find_data_record_record_lists_path(@data_record.data_table, record_list.parameters), class: 'ui blue label' %>
-  <%= link_to '修改', columns_data_record_record_list_path(@data_record, record_list), class: 'ui blue label' %>
-  <%= link_to 'edit', edit_data_record_record_list_path(@data_record, record_list), class: 'ui yellow label' %>
-  <%= link_to 'destroy', data_record_record_list_path(@data_record, record_list), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
-</td>
+

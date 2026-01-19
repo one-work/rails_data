@@ -1,0 +1,11 @@
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(action: 'rebuild', id: model.id),
+      icon: 'recycle',
+      title: t('.rebuild.title'),
+      confirm: t('.rebuild.confirm')
+    }
+  ) { yield }
+%>

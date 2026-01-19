@@ -1,0 +1,19 @@
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(action: 'run', id: model.id),
+      method: :patch,
+      title: t('.run.title')
+    },
+    {
+      href: url_for(action: 'find', id: model.id),
+      title: t('.find.title')
+    },
+    {
+      href: url_for(action: 'columns', id: model.id),
+      title: t('.columns.title')
+    },
+    icons: ['edit', 'destroy']
+  ) { yield }
+%>

@@ -4,19 +4,3 @@
 <td><%= model.export_excel %></td>
 <td><%= model.export_pdf %></td>
 <td><%= simple_format_hash(model.parameters) %></td>
-<td>
-  <div data-show-target="item" class="visibility-hidden">
-    <%= button_to({ action: 'rebuild', id: model.id }, method: :patch, aria: { label: t('.rebuild'), turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-recycle text-warning"></i>
-    <% end %>
-    <%= link_to({ action: 'template', id: model.id, format: 'xlsx' }, aria: { label: t('.template.title') }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-file-excel text-primary"></i>
-    <% end %>
-    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'pencil', class: 'icon text-link' %>
-    <% end %>
-    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'trash', class: 'icon text-danger' %>
-    <% end %>
-  </div>
-</td>

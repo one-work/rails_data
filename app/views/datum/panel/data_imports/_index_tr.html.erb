@@ -1,0 +1,17 @@
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(action: 'rebuild', id: model.id),
+      icon: 'recycle',
+      title: t('.rebuild.title'),
+      confirm: t('.rebuild.confirm')
+    },
+    {
+      href: url_for(action: 'template', id: model.id, format: 'xlsx'),
+      icon: 'file-excel',
+      title: t('.template.title')
+    },
+    icons: ['edit', 'destroy']
+  ) { yield }
+%>
