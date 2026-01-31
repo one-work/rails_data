@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/work-design/rails_com.git
-  revision: 816066b8110ed4d3add1c8e97785049d169210fb
+PATH
+  remote: ../rails_com
   specs:
     rails_com (1.3.0)
       acme-client
@@ -17,6 +16,7 @@ GIT
       net-scp
       ostruct
       positioning
+      psych-pure
       rails
       reline
       solid_cache
@@ -24,11 +24,10 @@ GIT
       sshkey
       turbo-rails
 
-GIT
-  remote: https://github.com/work-design/rails_design.git
-  revision: a951a5b89eaf6a13fa2eeae78640c6c4a87dc04e
+PATH
+  remote: ../rails_ui
   specs:
-    rails_design (0.0.1)
+    rails_ui (0.0.1)
       rails
 
 PATH
@@ -40,9 +39,8 @@ PATH
       nkf
       prawn
       prawn-table
-      roo
-      roo-xls
       write_xlsx
+      xsv
 
 GEM
   remote: https://rubygems.org/
@@ -122,7 +120,6 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
-    amazing_print (2.0.0)
     base64 (0.3.0)
     benchmark (0.4.1)
     bigdecimal (3.3.1)
@@ -152,7 +149,7 @@ GEM
       logger
     faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
-    faraday-retry (2.3.2)
+    faraday-retry (2.4.0)
       faraday (~> 2.0)
     fugit (1.11.2)
       et-orbi (~> 1, >= 1.2.11)
@@ -196,7 +193,8 @@ GEM
     matrix (0.4.3)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (5.26.0)
+    minitest (6.0.1)
+      prism (~> 1.5)
     monetize (1.13.0)
       money (~> 6.12)
     money (6.19.0)
@@ -244,6 +242,7 @@ GEM
     prawn-table (0.2.2)
       prawn (>= 1.3.0, < 3.0.0)
     prettyprint (0.2.0)
+    prism (1.9.0)
     propshaft (1.3.1)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -251,6 +250,9 @@ GEM
     psych (5.2.6)
       date
       stringio
+    psych-pure (0.3.0)
+      psych
+      strscan
     puma (7.0.4)
       nio4r (~> 2.0)
     raabro (1.4.0)
@@ -300,14 +302,6 @@ GEM
       tsort
     reline (0.6.2)
       io-console (~> 0.5)
-    roo (2.10.1)
-      nokogiri (~> 1)
-      rubyzip (>= 1.3.0, < 3.0.0)
-    roo-xls (1.2.0)
-      nokogiri
-      roo (>= 2.0.0, < 3)
-      spreadsheet (> 0.9.0)
-    ruby-ole (1.2.13.1)
     rubyzip (2.4.1)
     sdoc (2.6.4)
       rdoc (>= 5.0)
@@ -323,12 +317,9 @@ GEM
       fugit (~> 1.11.0)
       railties (>= 7.1)
       thor (>= 1.3.1)
-    spreadsheet (1.3.4)
-      bigdecimal
-      logger
-      ruby-ole
     sshkey (3.0.0)
     stringio (3.1.7)
+    strscan (3.1.7)
     thor (1.4.0)
     timeout (0.4.3)
     tsort (0.2.0)
@@ -351,6 +342,8 @@ GEM
     write_xlsx (1.12.2)
       nkf
       rubyzip (~> 2.4.0)
+    xsv (1.4.0)
+      rubyzip (>= 1.3, < 4)
     zeitwerk (2.7.3)
 
 PLATFORMS
@@ -358,7 +351,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  amazing_print
   debug
   pg
   propshaft
@@ -366,7 +358,7 @@ DEPENDENCIES
   rails
   rails_com!
   rails_data!
-  rails_design!
+  rails_ui!
   sdoc
 
 CHECKSUMS
@@ -382,7 +374,6 @@ CHECKSUMS
   activerecord (8.0.3) sha256=9b95c63b2ae9ccb57bb15db730300fdd02af387e12474eb9002a668acab3cea8
   activestorage (8.0.3) sha256=4f4eadeb5d128a35ed21d960eeece027225b36d54542512c8a36ad5316988c5e
   activesupport (8.0.3) sha256=a711ce5e30660b23232f26a38699469f8d859d47aa1f722e183fda6d7cc17823
-  amazing_print (2.0.0) sha256=2e36aba46ac78d37ed27ca0e2056afe3583183bb5c64f157c246b267355e5d6a
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   benchmark (0.4.1) sha256=d4ef40037bba27f03b28013e219b950b82bace296549ec15a78016552f8d2cce
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
@@ -401,7 +392,7 @@ CHECKSUMS
   et-orbi (1.4.0) sha256=6c7e3c90779821f9e3b324c5e96fda9767f72995d6ae435b96678a4f3e2de8bc
   faraday (2.14.0) sha256=8699cfe5d97e55268f2596f9a9d5a43736808a943714e3d9a53e6110593941cd
   faraday-net_http (3.4.1) sha256=095757fae7872b94eac839c08a1a4b8d84fd91d6886cfbe75caa2143de64ab3b
-  faraday-retry (2.3.2) sha256=2402d2029032ebd238a2046221e67f6ef0da78c5a8ce8cd4f8b9c62e4d6451d1
+  faraday-retry (2.4.0) sha256=7b79c48fb7e56526faf247b12d94a680071ff40c9fda7cf1ec1549439ad11ebe
   fugit (1.11.2) sha256=4c2e234f750c78d4514d0ca343a0b923847eac3846976fdb23ed4245d8fde6fe
   globalid (1.3.0) sha256=05c639ad6eb4594522a0b07983022f04aa7254626ab69445a0e493aa3786ff11
   http-2 (1.1.1) sha256=1141a5a03c2f4e6b8d2fa62394de581e1ff6387711cd7ed577212e9d95562bba
@@ -422,7 +413,7 @@ CHECKSUMS
   matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
-  minitest (5.26.0) sha256=f5817ad09f863a4f7eac917707c1ca5c09cdc4a35e17d91171760178324d2c30
+  minitest (6.0.1) sha256=7854c74f48e2e975969062833adc4013f249a4b212f5e7b9d5c040bf838d54bb
   monetize (1.13.0) sha256=0c1f8ae28aa21bbf1a6d014138d9bb0a5ce756c1a99b8b7f7d409c258b01d3b3
   money (6.19.0) sha256=ec936fa1e42f2783719241ed9fd52725d0efa628f928feea1eb5c37d5de7daf3
   money-rails (1.15.0) sha256=cace7c3af76a0685747f57b96fdb321a4d966294e0a11b51f8e28c3ac08e4903
@@ -447,8 +438,10 @@ CHECKSUMS
   prawn (2.5.0) sha256=f4e20e3b4f30bf5b9ae37dad15eb421831594553aa930b2391b0fa0a99c43cb6
   prawn-table (0.2.2) sha256=336d46e39e003f77bf973337a958af6a68300b941c85cb22288872dc2b36addb
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
+  prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
   propshaft (1.3.1) sha256=9acc664ef67e819ffa3d95bd7ad4c3623ea799110c5f4dee67fa7e583e74c392
   psych (5.2.6) sha256=814328aa5dcb6d604d32126a20bc1cbcf05521a5b49dbb1a8b30a07e580f316e
+  psych-pure (0.3.0) sha256=5803cbdd03f3d213302a3523aa733a1e0c144056699948e71226ff6f74433911
   puma (7.0.4) sha256=b4c6ae11d1458052eeaa415176c3bf0000f4232287f413525ab2504446154b7a
   raabro (1.4.0) sha256=d4fa9ff5172391edb92b242eed8be802d1934b1464061ae5e70d80962c5da882
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
@@ -461,22 +454,19 @@ CHECKSUMS
   rails-html-sanitizer (1.6.2) sha256=35fce2ca8242da8775c83b6ba9c1bcaad6751d9eb73c1abaa8403475ab89a560
   rails_com (1.3.0)
   rails_data (1.0.2)
-  rails_design (0.0.1)
+  rails_ui (0.0.1)
   railties (8.0.3) sha256=ace31dcad7134299a64d6d96310d76d32868756e58e2983e25b121acd457f1d2
   rake (13.3.0) sha256=96f5092d786ff412c62fde76f793cc0541bd84d2eb579caa529aa8a059934493
   rdoc (6.15.0) sha256=0f0e68864969e77c2acd4063a9585baa5216d362701d827a93feaa9cbae78b05
   reline (0.6.2) sha256=1dad26a6008872d59c8e05244b119347c9f2ddaf4a53dce97856cd5f30a02846
-  roo (2.10.1) sha256=cbb43bc955f9c110e74b721c835fb9bd3515b63af88ec709ac87fbf30f8be70e
-  roo-xls (1.2.0) sha256=e340d7458d5f084e30f5eb4dc80925b047ecc7802a09115eaaba11bd4e8384cd
-  ruby-ole (1.2.13.1) sha256=578d10dd2a797a2b35a1286c6fb2c9525f67c24791346fc8015d39f0ffa3cb72
   rubyzip (2.4.1) sha256=8577c88edc1fde8935eb91064c5cb1aef9ad5494b940cf19c775ee833e075615
   sdoc (2.6.4) sha256=c709ad72e4ae8dde2fbd02ab4f10a1722b0d8747a74d5501d37f38984d3b2421
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   solid_cache (1.0.8) sha256=6afab113f966aa6cfccaa9a79d6e37479fb439e94e9d39d713e86fb1d778cc02
   solid_queue (1.2.1) sha256=7976b3690a08080ef63d1b11281f0b77398f7697dbeda0e2c5532682639d4b15
-  spreadsheet (1.3.4) sha256=0aefd6f3dfdc8b43528109f7fbd54db54f85ce5920429413d48305906bc59253
   sshkey (3.0.0) sha256=655ba351d6e01a48dfe59d65530af8975c777b8cc57a061770de3228ff2d11cd
   stringio (3.1.7) sha256=5b78b7cb242a315fb4fca61a8255d62ec438f58da2b90be66048546ade4507fa
+  strscan (3.1.7) sha256=5f76462b94a3ea50b44973225b7d75b2cb96d4e1bee9ef1319b99ca117b72c8c
   thor (1.4.0) sha256=8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d
   timeout (0.4.3) sha256=9509f079b2b55fe4236d79633bd75e34c1c1e7e3fb4b56cb5fda61f80a0fe30e
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
@@ -489,7 +479,8 @@ CHECKSUMS
   websocket-extensions (0.1.5) sha256=1c6ba63092cda343eb53fc657110c71c754c56484aad42578495227d717a8241
   with_advisory_lock (7.0.2) sha256=df4485bb456115a13d28342b086a01f810de7726acf77f89b3c8863626d73a00
   write_xlsx (1.12.2) sha256=641aa88d915ce0b9de61bcea527c4fff5648d0747c377d1149976a9badb7ef55
+  xsv (1.4.0) sha256=aeb3e11dcd726c4d92d837fa71dec887a40cfac37cd8efc9abd9cbc7456860ec
   zeitwerk (2.7.3) sha256=b2e86b4a9b57d26ba68a15230dcc7fe6f040f06831ce64417b0621ad96ba3e85
 
 BUNDLED WITH
-   2.6.2
+  4.0.5
