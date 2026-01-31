@@ -1,4 +1,3 @@
-require 'roo'
 module Datum
   class Importer
     attr_reader :sheet, :headers
@@ -6,15 +5,12 @@ module Datum
     def initialize(table_list)
       @table_list = table_list
       @sheet_file = table_list.file
-      if @sheet_file.filename.extension == '.xls'
-        require 'roo-xls'
+      if @sheet_file.filename.extension == '.xlsx'
         @sheet_file.open do |file|
-          @xlsx = Roo::Excel.new(file)
+          @xlsx = Xsv.open(file)
         end
       else
-        @sheet_file.open do |file|
-          @xlsx = Roo::Excelx.new(file)
-        end
+        raise '请使用 xlsx 格式!'
       end
       @sheet = @xlsx.sheet(@xlsx.sheets[0])
 
