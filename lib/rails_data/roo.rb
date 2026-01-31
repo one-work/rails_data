@@ -28,5 +28,3 @@ module RailsData::Roo
   end
 
 end
-
-Roo::Base.prepend RailsData::Roo
