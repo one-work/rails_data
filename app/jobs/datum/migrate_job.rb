@@ -1,6 +1,6 @@
 module Datum
   class MigrateJob < ApplicationJob
-    queue_as :default
+    include ActiveJob::Continuable
 
     def perform(record_klass, target_name)
       record_class = record_klass.constantize
