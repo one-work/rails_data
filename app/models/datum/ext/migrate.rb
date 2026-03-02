@@ -13,7 +13,7 @@ module Datum
       end
     end
 
-    def migrate(target = {})
+    def migrate(target = self.class::DEFAULT)
       keys = mapped_attributes(target[:key])
       return if keys.value?(nil)
 
