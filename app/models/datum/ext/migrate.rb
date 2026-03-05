@@ -34,7 +34,7 @@ module Datum
         else
           hash[key] = attributes[value]
         end
-      end
+      end.compact
     end
 
     def sync_images(to, images)
