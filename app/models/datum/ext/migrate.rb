@@ -25,6 +25,7 @@ module Datum
       to
     rescue ActiveRecord::RecordInvalid
       logger.debug "\e[35m  #{to.class}: #{to.errors.details}  \e[0m"
+      Err.create(from_class: self.class, from_id: id, to_class: target[:to], target: 'DEFAULT')
       to
     end
 
