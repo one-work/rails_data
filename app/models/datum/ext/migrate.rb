@@ -25,6 +25,7 @@ module Datum
       to
     rescue ActiveRecord::RecordInvalid
       logger.debug "\e[35m  #{to.class}: #{to.errors.details}  \e[0m"
+      to
     end
 
     def mapped_attributes(map = {})
