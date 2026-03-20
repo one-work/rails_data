@@ -51,6 +51,15 @@ module Datum
         MigrateJob.perform_later(self.name, target_name)
       end
 
+      def migrate(target_name = 'DEFAULT')
+        return unless const_defined?(target_name)
+        target = const_get(target_name)
+
+        find_each do |i|
+          i.migrate(target)
+        end
+      end
+
       def migrate_with_children
       end
 
