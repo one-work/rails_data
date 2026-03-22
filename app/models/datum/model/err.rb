@@ -9,5 +9,9 @@ module Datum
       attribute :target, :string
     end
 
+    def from
+      from_class.constantize.find(from_id)
+    end
+
   end
 end
