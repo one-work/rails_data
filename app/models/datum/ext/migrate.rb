@@ -13,7 +13,9 @@ module Datum
       end
     end
 
-    def migrate(target = self.class::DEFAULT)
+    def migrate(target_name = 'DEFAULT')
+      return unless self.class.const_defined?(target_name)
+      target = self.class.const_get(target_name)
       keys = mapped_attributes(target[:key])
       return if keys.value?(nil)
 
