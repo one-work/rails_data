@@ -54,11 +54,8 @@ module Datum
       end
 
       def migrate(target_name = 'DEFAULT')
-        return unless const_defined?(target_name)
-        target = const_get(target_name)
-
         find_each do |i|
-          i.migrate(target)
+          i.migrate(target_name)
         end
       end
 

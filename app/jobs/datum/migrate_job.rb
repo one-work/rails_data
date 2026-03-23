@@ -9,12 +9,12 @@ module Datum
       step :process, start: record_class.first.id do |step|
         if target[:not].present?
           record_class.where(target[:filter] || {}).where.not(target[:not]).find_each(start: step.cursor) do |i|
-            i.migrate(target)
+            i.migrate(target_name)
             step.set! i.id
           end
         else
           record_class.where(target[:filter] || {}).find_each(start: step.cursor) do |i|
-            i.migrate(target)
+            i.migrate(target_name)
             step.set! i.id
           end
         end
