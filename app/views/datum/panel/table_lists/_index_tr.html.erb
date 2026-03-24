@@ -1,0 +1,22 @@
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(action: 'run', id: model.id),
+      icon: 'caret-right',
+      title: t('.run.title')
+    },
+    {
+      link: url_for(action: 'show', id: model.id, format: 'csv'),
+      title: 'csv'
+    },
+    {
+      link: url_for(action: 'show', id: model.id, format: 'xlsx'),
+      title: 'xlsx'
+    },
+    {
+      link: url_for(action: 'pdf', id: model.id),
+      title: 'pdf'
+    }
+  ) { yield }
+%>
