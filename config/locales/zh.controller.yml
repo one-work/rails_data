@@ -9,7 +9,9 @@ zh:
       data_exports:
         index:
           title: 报表
-          rebuild: 重置参数
+        rebuild:
+          title: 重置参数
+          confirm: 确认
         sync:
           title: 初始化
       data_imports:
