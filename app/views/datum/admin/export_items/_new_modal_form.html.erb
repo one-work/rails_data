@@ -1,6 +1,6 @@
 <%= form_with theme: 'modal', model: @export_item, url: { action: 'create' } do |f| %>
   <%= render 'modal_header' %>
-  <section class="modal-card-body">
+  <section id="modal-card-body" class="modal-card-body">
     <%= render partial: 'com/extra/extra_form', locals: { taxon: @export.template, f: f } %>
   </section>
   <footer class="modal-card-foot">

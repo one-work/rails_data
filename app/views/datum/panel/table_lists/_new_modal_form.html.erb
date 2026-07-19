@@ -1,6 +1,6 @@
 <%= form_with theme: 'modal', model: @table_list, url: { action: 'create' } do |f| %>
   <%= render 'modal_header' %>
-  <section id="modal_card_body" class="modal-card-body">
+  <section id="modal-card-body" class="modal-card-body">
     <%= render partial: 'com/extra/extra_form', locals: { taxon: @data_list, f: f } %>
   </section>
   <%= f.submit %>
