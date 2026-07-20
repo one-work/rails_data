@@ -6,6 +6,6 @@
 </div>
 
 <%= form_with model: @table_list, url: { action: 'create_import' } do |f| %>
-  <%= f.file_field :file %>
+  <%= render partial: 'com/attachments/list_field', locals: { target: f.object.file, f: f } %>
   <%= f.submit %>
 <% end %>
