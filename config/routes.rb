@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.app.routes.draw do
   namespace :datum, defaults: { business: 'datum' } do
     namespace :admin, defaults: { namespace: 'admin' } do
       root 'home#index'
