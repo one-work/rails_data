@@ -1,15 +1,11 @@
-name: Engine Collect
+name: 所有组件
 on:
   push:
     branches:
       - main
 jobs:
   build:
-<<<<<<< HEAD:.github/workflows/git.yml
-    name: Git Collect
-=======
     name: Engine Collect
->>>>>>> 4d5ef1492d2cf0402b591de6c327c2d556fe405a:.github/workflows/engine.yml
     environment: dev
     runs-on: ubuntu-latest
     steps:
